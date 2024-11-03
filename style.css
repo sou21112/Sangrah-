@@ -1,19 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #fafafa;
 }
 
 header {
-    background-color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #262626;
 }
 
 nav button {
-    margin: 0 10px;
+    margin-left: 15px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #0095f6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #007bbf;
 }
 
 main {
@@ -24,19 +42,37 @@ main {
     margin-bottom: 20px;
 }
 
-.post {
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
 }
 
-img {
-    max-width: 100%;
+.post {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.post img {
+    width: 100%;
     height: auto;
+}
+
+.post .username {
+    font-weight: bold;
+    padding: 10px;
 }
 
 #auth {
     margin-top: 20px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
