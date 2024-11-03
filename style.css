@@ -50,20 +50,20 @@ h2 {
     color: #262626;
 }
 
-#post-container, #reelContainer {
+#post-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
 }
 
-.post, .reel {
+.post {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.post img, .reel video {
+.post img {
     width: 100%;
     height: auto;
 }
