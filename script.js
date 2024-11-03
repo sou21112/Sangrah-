@@ -2,17 +2,30 @@ let users = [];
 let posts = [];
 
 function showLogin() {
+    hideAll();
     document.getElementById('auth').style.display = 'block';
     document.getElementById('login-form').style.display = 'block';
-    document.getElementById('register-form').style.display = 'none';
-    document.getElementById('upload').style.display = 'none';
 }
 
 function showRegister() {
+    hideAll();
     document.getElementById('auth').style.display = 'block';
-    document.getElementById('login-form').style.display = 'none';
     document.getElementById('register-form').style.display = 'block';
+}
+
+function showForgotPassword() {
+    hideAll();
+    document.getElementById('auth').style.display = 'block';
+    document.getElementById('forgot-password-form').style.display = 'block';
+}
+
+function hideAll() {
+    document.getElementById('auth').style.display = 'none';
+    document.getElementById('home-feed').style.display = 'none';
     document.getElementById('upload').style.display = 'none';
+    document.getElementById('profile').style.display = 'none';
+    document.getElementById('messages').style.display = 'none';
+    document.getElementById('reels').style.display = 'none';
 }
 
 function register() {
@@ -32,33 +45,54 @@ function login() {
     const user = users.find(user => user.email === email && user.password === password);
     if (user) {
         alert(`Welcome back, ${user.username}!`);
-        document.getElementById('auth').style.display = 'none';
-        document.getElementById('upload').style.display = 'block';
+        hideAll();
+        document.getElementById('home-feed').style.display = 'block';
         displayPosts();
     } else {
         alert('Invalid email or password!');
     }
 }
 
-function uploadImage() {
-    const imageInput = document.getElementById('imageInput');
-    const file = imageInput.files[0];
+function resetPassword() {
+    const email = document.getElementById('forgotEmail').value;
+    const user = users.find(user => user.email === email);
+    if (user) {
+        alert('Password reset link sent to your email!');
+        showLogin();
+    } else {
+        alert('Email not found!');
+    }
+}
+
+function showHomeFeed() {
+    hideAll();
+    document.getElementById('home-feed').style.display = 'block';
+}
+
+function showUpload() {
+    hideAll();
+    document.getElementById('upload').style.display = 'block';
+}
+
+function uploadMedia() {
+    const mediaInput = document.getElementById('mediaInput');
+    const file = mediaInput.files[0];
     const reader = new FileReader();
-    
+
     reader.onload = function(event) {
         const post = {
-            image: event.target.result,
+            media: event.target.result,
             username: users[users.length - 1].username, // Assuming the last user is logged in
         };
         posts.push(post);
         displayPosts();
-        imageInput.value = ''; // Clear input
+        mediaInput.value = ''; // Clear input
     };
 
     if (file) {
         reader.readAsDataURL(file);
     } else {
-        alert('Please select an image to upload!');
+        alert('Please select an image or video to upload!');
     }
 }
 
@@ -68,7 +102,4 @@ function displayPosts() {
     posts.forEach(post => {
         const postDiv = document.createElement('div');
         postDiv.classList.add('post');
-        postDiv.innerHTML = `<div class="username">${post.username}</div><img src="${post.image}" alt="Post Image">`;
-        postContainer.appendChild(postDiv);
-    });
-}
+        postDiv.innerHTML = `<div class="username">${post.username}</div><img src
