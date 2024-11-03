@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sangrah</title>
+</head>
+<body>
+    <header>
+        <h1>Sangrah</h1>
+        <nav>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showRegister()">Register</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="posts">
+            <h2>Posts</h2>
+            <div id="post-container"></div>
+        </section>
+
+        <section id="upload" style="display: none;">
+            <h2>Upload Image</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <button onclick="uploadImage()">Upload</button>
+        </section>
+
+        <section id="auth" style="display: none;">
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <button onclick="showRegister()">Switch to Register</button>
+            </div>
+            <div id="register-form" style="display: none;">
+                <h2>Register</h2>
+                <input type="text" id="registerUsername" placeholder="Username">
+                <input type="email" id="registerEmail" placeholder="Email">
+                <input type="password" id="registerPassword" placeholder="Password">
+                <button onclick="register()">Register</button>
+                <button onclick="showLogin()">Switch to Login</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
