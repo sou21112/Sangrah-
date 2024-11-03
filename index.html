@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Sangrah</h1>
+        <div class="logo">Sangrah</div>
         <nav>
             <button onclick="showLogin()">Login</button>
             <button onclick="showRegister()">Register</button>
@@ -30,16 +30,16 @@
         <section id="auth" style="display: none;">
             <div id="login-form">
                 <h2>Login</h2>
-                <input type="email" id="loginEmail" placeholder="Email">
-                <input type="password" id="loginPassword" placeholder="Password">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
                 <button onclick="login()">Login</button>
                 <button onclick="showRegister()">Switch to Register</button>
             </div>
             <div id="register-form" style="display: none;">
                 <h2>Register</h2>
-                <input type="text" id="registerUsername" placeholder="Username">
-                <input type="email" id="registerEmail" placeholder="Email">
-                <input type="password" id="registerPassword" placeholder="Password">
+                <input type="text" id="registerUsername" placeholder="Username" required>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
                 <button onclick="register()">Register</button>
                 <button onclick="showLogin()">Switch to Login</button>
             </div>
