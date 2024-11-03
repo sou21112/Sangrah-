@@ -16,17 +16,6 @@
     </header>
 
     <main>
-        <section id="posts">
-            <h2>Posts</h2>
-            <div id="post-container"></div>
-        </section>
-
-        <section id="upload" style="display: none;">
-            <h2>Upload Image</h2>
-            <input type="file" id="imageInput" accept="image/*">
-            <button onclick="uploadImage()">Upload</button>
-        </section>
-
         <section id="auth" style="display: none;">
             <div id="login-form">
                 <h2>Login</h2>
@@ -34,6 +23,7 @@
                 <input type="password" id="loginPassword" placeholder="Password" required>
                 <button onclick="login()">Login</button>
                 <button onclick="showRegister()">Switch to Register</button>
+                <button onclick="showForgotPassword()">Forgot Password?</button>
             </div>
             <div id="register-form" style="display: none;">
                 <h2>Register</h2>
@@ -43,9 +33,44 @@
                 <button onclick="register()">Register</button>
                 <button onclick="showLogin()">Switch to Login</button>
             </div>
+            <div id="forgot-password-form" style="display: none;">
+                <h2>Forgot Password</h2>
+                <input type="email" id="forgotEmail" placeholder="Email" required>
+                <button onclick="resetPassword()">Reset Password</button>
+                <button onclick="showLogin()">Back to Login</button>
+            </div>
+        </section>
+
+        <section id="home-feed" style="display: none;">
+            <h2>Home Feed</h2>
+            <div id="post-container"></div>
+            <button onclick="showUpload()">Upload Photo/Video</button>
+        </section>
+
+        <section id="upload" style="display: none;">
+            <h2>Upload Media</h2>
+            <input type="file" id="mediaInput" accept="image/*,video/*">
+            <button onclick="uploadMedia()">Upload</button>
+            <button onclick="showHomeFeed()">Cancel</button>
+        </section>
+
+        <section id="profile" style="display: none;">
+            <h2>Profile</h2>
+            <div id="userProfile"></div>
+        </section>
+
+        <section id="messages" style="display: none;">
+            <h2>Messages</h2>
+            <div id="messageContainer"></div>
+        </section>
+
+        <section id="reels" style="display: none;">
+            <h2>Reels</h2>
+            <div id="reelContainer"></div>
         </section>
     </main>
 
     <script src="script.js"></script>
 </body>
 </html>
+
