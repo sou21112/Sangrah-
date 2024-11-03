@@ -102,4 +102,7 @@ function displayPosts() {
     posts.forEach(post => {
         const postDiv = document.createElement('div');
         postDiv.classList.add('post');
-        postDiv.innerHTML = `<div class="username">${post.username}</div><img src
+        postDiv.innerHTML = `<div class="username">${post.username}</div><img src="${post.media}" alt="Post Image">`;
+        postContainer.appendChild(postDiv);
+    });
+}
