@@ -61,3 +61,10 @@ button:hover {
 .forgot-password-link:hover {
     text-decoration: underline;
 }
+
+
+.notification {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+}
