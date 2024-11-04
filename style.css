@@ -1,24 +1,110 @@
-/* Profile Section Styles */
-#userProfile {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* General Layout */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.header h1 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.header nav a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3897f0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Home Feed */
+.feed .post {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.actions button {
+    margin: 5px;
+    color: #3897f0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Profile Page */
+.profile {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
     margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#userPostContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+.posts-gallery {
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-}
-
-#userPostContainer .post {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     padding: 10px;
 }
 
-#userPostContainer .post img,
-#userPostContainer .post video {
-    width: 100%;
-    height: auto;
+.posts-gallery img {
+    width: 30%;
+    border-radius: 5px;
 }
