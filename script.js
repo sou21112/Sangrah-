@@ -14,3 +14,19 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         event.preventDefault();
     }
 });
+
+
+// Forgot Password form submission
+document.getElementById("forgotPasswordForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent the form from submitting normally
+
+    const email = document.getElementById("email").value;
+    const notification = document.getElementById("notification");
+
+    // Simulate sending an email by displaying a confirmation message
+    notification.textContent = `A password reset link has been sent to ${email}.`;
+    notification.style.color = "green";
+
+    // Clear the email input after displaying the message
+    document.getElementById("email").value = "";
+});
