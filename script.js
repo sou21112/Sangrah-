@@ -1,19 +1,28 @@
-// Toggle password visibility on login page
-document.getElementById("showPassword").addEventListener("change", function () {
-    const passwordField = document.getElementById("password");
-    passwordField.type = this.checked ? "text" : "password";
-});
+// Example username and password (replace with your logic or API)
+const validUsername = "user"; // Change to the valid username
+const validPassword = "password"; // Change to the valid password
 
-// Registration form validation
-document.getElementById("registerForm").addEventListener("submit", function (event) {
-    const password = document.getElementById("regPassword").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+function validateLogin() {
+    const usernameInput = document.getElementById('username').value;
+    const passwordInput = document.getElementById('password').value;
+    const messageDiv = document.getElementById('loginMessage');
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match!");
-        event.preventDefault();
+    if (usernameInput === validUsername && passwordInput === validPassword) {
+        // Redirect to home.html if credentials are correct
+        window.location.href = 'home.html';
+        return false; // Prevent form submission
+    } else {
+        // Show error message if credentials are incorrect
+        messageDiv.innerHTML = '<p style="color: red;">Invalid username or password. Please try again.</p>';
+        return false; // Prevent form submission
     }
-});
+}
+
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById('password');
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    passwordField.type = showPasswordCheckbox.checked ? 'text' : 'password';
+}
 
 
 // Forgot Password form submission
