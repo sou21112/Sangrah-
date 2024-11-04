@@ -3,78 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Sangrah</title>
+    <title>Sangrah - Login</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Sangrah</div>
-        <nav>
-            <button onclick="showProfile()">Profile</button>
-            <button onclick="showLogin()">Login</button>
-            <button onclick="showRegister()">Register</button>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Authentication Section -->
-        <section id="auth" style="display: none;">
-            <!-- Login Form -->
-            <div id="login-form">
-                <h2>Login</h2>
-                <input type="email" id="loginEmail" placeholder="Email" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <button onclick="login()">Login</button>
-                <button onclick="showRegister()">Switch to Register</button>
-                <button onclick="showForgotPassword()">Forgot Password?</button>
-            </div>
-
-            <!-- Register Form -->
-            <div id="register-form" style="display: none;">
-                <h2>Register</h2>
-                <input type="text" id="registerUsername" placeholder="Username" required>
-                <input type="email" id="registerEmail" placeholder="Email" required>
-                <input type="password" id="registerPassword" placeholder="Password" required>
-                <button onclick="register()">Register</button>
-                <button onclick="showLogin()">Switch to Login</button>
-            </div>
-
-            <!-- Forgot Password Form -->
-            <div id="forgot-password-form" style="display: none;">
-                <h2>Forgot Password</h2>
-                <input type="email" id="forgotEmail" placeholder="Email" required>
-                <button onclick="resetPassword()">Reset Password</button>
-                <button onclick="showLogin()">Back to Login</button>
-            </div>
-        </section>
-
-        <!-- Home Feed Section -->
-        <section id="home-feed" style="display: none;">
-            <h2>Home Feed</h2>
-            <div id="post-container"></div>
-            <button onclick="showUpload()">Upload Photo/Video</button>
-        </section>
-
-        <!-- Profile Section -->
-        <section id="profile" style="display: none;">
-            <h2>Profile</h2>
-            <div id="userProfile">
-                <p id="profileUsername"></p>
-                <p id="profileEmail"></p>
-                <h3>Your Posts</h3>
-                <div id="userPostContainer"></div>
-            </div>
-        </section>
-
-        <!-- Upload Section -->
-        <section id="upload" style="display: none;">
-            <h2>Upload Media</h2>
-            <input type="file" id="mediaInput" accept="image/*,video/*">
-            <button onclick="uploadMedia()">Upload</button>
-            <button onclick="showHomeFeed()">Cancel</button>
-        </section>
-    </main>
-
+    <div class="login-container">
+        <h1>Sangrah</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <p>Forgot password?</p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
+
