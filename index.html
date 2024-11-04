@@ -7,29 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Login to Sangrah</h2>
-        <form id="loginForm">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            
-            <input type="checkbox" id="showPassword"> Show Password
-            <a href="forgot_password.html" class="forgot-password-link">Forgot Password?</a>
-             <!-- Link to Home -->
-        <a href="home.html">Go to Home</a>
+    <div class="login-container">
+        <h1>Login to Sangrah</h1>
+        <form id="loginForm" onsubmit="return validateLogin();">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <label>
+                <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"> Show Password
+            </label>
+            <button type="submit">Login</button>
+            <p><a href="forgot_password.html">Forgot Password?</a></p>
+        </form>
+         <a href="home.html">Go to Home</a>
 
         <div id="loginMessage"></div>
     </div>
 
-    <script src="scripts.js"></script> 
-    <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
-           </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+        <div id="loginMessage"></div>
+    </div>
 
     <script src="scripts.js"></script>
 </body>
 </html>
+
