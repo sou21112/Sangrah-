@@ -10,13 +10,16 @@
     <header>
         <div class="logo">Sangrah</div>
         <nav>
+            <button onclick="showProfile()">Profile</button>
             <button onclick="showLogin()">Login</button>
             <button onclick="showRegister()">Register</button>
         </nav>
     </header>
 
     <main>
+        <!-- Authentication Section -->
         <section id="auth" style="display: none;">
+            <!-- Login Form -->
             <div id="login-form">
                 <h2>Login</h2>
                 <input type="email" id="loginEmail" placeholder="Email" required>
@@ -25,6 +28,8 @@
                 <button onclick="showRegister()">Switch to Register</button>
                 <button onclick="showForgotPassword()">Forgot Password?</button>
             </div>
+
+            <!-- Register Form -->
             <div id="register-form" style="display: none;">
                 <h2>Register</h2>
                 <input type="text" id="registerUsername" placeholder="Username" required>
@@ -33,6 +38,8 @@
                 <button onclick="register()">Register</button>
                 <button onclick="showLogin()">Switch to Login</button>
             </div>
+
+            <!-- Forgot Password Form -->
             <div id="forgot-password-form" style="display: none;">
                 <h2>Forgot Password</h2>
                 <input type="email" id="forgotEmail" placeholder="Email" required>
@@ -41,32 +48,30 @@
             </div>
         </section>
 
+        <!-- Home Feed Section -->
         <section id="home-feed" style="display: none;">
             <h2>Home Feed</h2>
             <div id="post-container"></div>
             <button onclick="showUpload()">Upload Photo/Video</button>
         </section>
 
+        <!-- Profile Section -->
+        <section id="profile" style="display: none;">
+            <h2>Profile</h2>
+            <div id="userProfile">
+                <p id="profileUsername"></p>
+                <p id="profileEmail"></p>
+                <h3>Your Posts</h3>
+                <div id="userPostContainer"></div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
         <section id="upload" style="display: none;">
             <h2>Upload Media</h2>
             <input type="file" id="mediaInput" accept="image/*,video/*">
             <button onclick="uploadMedia()">Upload</button>
             <button onclick="showHomeFeed()">Cancel</button>
-        </section>
-
-        <section id="profile" style="display: none;">
-            <h2>Profile</h2>
-            <div id="userProfile"></div>
-        </section>
-
-        <section id="messages" style="display: none;">
-            <h2>Messages</h2>
-            <div id="messageContainer"></div>
-        </section>
-
-        <section id="reels" style="display: none;">
-            <h2>Reels</h2>
-            <div id="reelContainer"></div>
         </section>
     </main>
 
