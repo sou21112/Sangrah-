@@ -1,22 +1,20 @@
-// Example username and password (replace with your logic or API)
-const validUsername = "user"; // Change to the valid username
-const validPassword = "password"; // Change to the valid password
+// Toggle password visibility on login page
+document.getElementById("showPassword").addEventListener("change", function () {
+    const passwordField = document.getElementById("password");
+    passwordField.type = this.checked ? "text" : "password";
+});
 
-function validateLogin() {
-    const usernameInput = document.getElementById('username').value;
-    const passwordInput = document.getElementById('password').value;
-    const messageDiv = document.getElementById('loginMessage');
+// Registration form validation
+document.getElementById("registerForm").addEventListener("submit", function (event) {
+    const password = document.getElementById("regPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (usernameInput === validUsername && passwordInput === validPassword) {
-        // Redirect to home.html if credentials are correct
-        window.location.href = 'home.html';
-        return false; // Prevent form submission
-    } else {
-        // Show error message if credentials are incorrect
-        messageDiv.innerHTML = '<p style="color: red;">Invalid username or password. Please try again.</p>';
-        return false; // Prevent form submission
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        event.preventDefault();
     }
-}
+});
+
 
 function togglePasswordVisibility() {
     const passwordField = document.getElementById('password');
