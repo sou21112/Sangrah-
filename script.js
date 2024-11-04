@@ -1,5 +1,6 @@
 let users = [];
 let posts = [];
+let currentUser = null;
 
 function showLogin() {
     hideAll();
@@ -24,8 +25,6 @@ function hideAll() {
     document.getElementById('home-feed').style.display = 'none';
     document.getElementById('upload').style.display = 'none';
     document.getElementById('profile').style.display = 'none';
-    document.getElementById('messages').style.display = 'none';
-    document.getElementById('reels').style.display = 'none';
 }
 
 function register() {
@@ -42,9 +41,9 @@ function login() {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
 
-    const user = users.find(user => user.email === email && user.password === password);
-    if (user) {
-        alert(`Welcome back, ${user.username}!`);
+    currentUser = users.find(user => user.email === email && user.password === password);
+    if (currentUser) {
+        alert(`Welcome back, ${currentUser.username}!`);
         hideAll();
         document.getElementById('home-feed').style.display = 'block';
         displayPosts();
@@ -69,6 +68,19 @@ function showHomeFeed() {
     document.getElementById('home-feed').style.display = 'block';
 }
 
+function showProfile() {
+    hideAll();
+    document.getElementById('profile').style.display = 'block';
+    if (currentUser) {
+        document.getElementById('profileUsername').innerText = `Username: ${currentUser.username}`;
+        document.getElementById('profileEmail').innerText = `Email: ${currentUser.email}`;
+        displayUserPosts();
+    } else {
+        alert("Please login to view profile.");
+        showLogin();
+    }
+}
+
 function showUpload() {
     hideAll();
     document.getElementById('upload').style.display = 'block';
@@ -82,7 +94,8 @@ function uploadMedia() {
     reader.onload = function(event) {
         const post = {
             media: event.target.result,
-            username: users[users.length - 1].username, // Assuming the last user is logged in
+            username: currentUser.username,
+            userId: currentUser.email
         };
         posts.push(post);
         displayPosts();
@@ -104,5 +117,18 @@ function displayPosts() {
         postDiv.classList.add('post');
         postDiv.innerHTML = `<div class="username">${post.username}</div><img src="${post.media}" alt="Post Image">`;
         postContainer.appendChild(postDiv);
+    });
+}
+
+function displayUserPosts() {
+    const userPostContainer = document.getElementById('userPostContainer');
+    userPostContainer.innerHTML = '';
+    const userPosts = posts.filter(post => post.userId === currentUser.email);
+
+    userPosts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
+        postDiv.innerHTML = `<img src="${post.media}" alt="User Post">`;
+        userPostContainer.appendChild(postDiv);
     });
 }
