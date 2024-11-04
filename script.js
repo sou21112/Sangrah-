@@ -1,26 +1,16 @@
-document.getElementById('switchToRegister').addEventListener('click', function() {
-    document.getElementById('loginContainer').style.display = 'none';
-    document.getElementById('registerContainer').style.display = 'block';
+// Toggle password visibility on login page
+document.getElementById("showPassword").addEventListener("change", function () {
+    const passwordField = document.getElementById("password");
+    passwordField.type = this.checked ? "text" : "password";
 });
 
-document.getElementById('switchToLogin').addEventListener('click', function() {
-    document.getElementById('registerContainer').style.display = 'none';
-    document.getElementById('loginContainer').style.display = 'block';
-});
+// Registration form validation
+document.getElementById("registerForm").addEventListener("submit", function (event) {
+    const password = document.getElementById("regPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-document.getElementById('switchToForgotPassword').addEventListener('click', function() {
-    document.getElementById('loginContainer').style.display = 'none';
-    document.getElementById('forgotPasswordContainer').style.display = 'block';
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        event.preventDefault();
+    }
 });
-
-document.getElementById('switchToLoginFromForgot').addEventListener('click', function() {
-    document.getElementById('forgotPasswordContainer').style.display = 'none';
-    document.getElementById('loginContainer').style.display = 'block';
-});
-
-document.getElementById('showPassword').addEventListener('change', function() {
-    var passwordField = document.getElementById('password');
-    passwordField.type = this.checked ? 'text' : 'password';
-});
-
-// Add form submission handlers here to handle login, register, and password reset.
