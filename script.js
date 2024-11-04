@@ -1,22 +1,26 @@
-// Basic login functionality
-document.getElementById("login-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (username === "testuser" && password === "password") {
-        alert("Login successful!");
-        window.location.href = "home.html";
-    } else {
-        alert("Incorrect username or password. Please try again.");
-    }
+document.getElementById('switchToRegister').addEventListener('click', function() {
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('registerContainer').style.display = 'block';
 });
 
-// Like button functionality
-document.querySelectorAll(".actions button").forEach(button => {
-    button.addEventListener("click", () => {
-        button.style.color = button.style.color === "red" ? "#3897f0" : "red";
-    });
+document.getElementById('switchToLogin').addEventListener('click', function() {
+    document.getElementById('registerContainer').style.display = 'none';
+    document.getElementById('loginContainer').style.display = 'block';
 });
 
+document.getElementById('switchToForgotPassword').addEventListener('click', function() {
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('forgotPasswordContainer').style.display = 'block';
+});
+
+document.getElementById('switchToLoginFromForgot').addEventListener('click', function() {
+    document.getElementById('forgotPasswordContainer').style.display = 'none';
+    document.getElementById('loginContainer').style.display = 'block';
+});
+
+document.getElementById('showPassword').addEventListener('change', function() {
+    var passwordField = document.getElementById('password');
+    passwordField.type = this.checked ? 'text' : 'password';
+});
+
+// Add form submission handlers here to handle login, register, and password reset.
