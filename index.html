@@ -3,82 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sangrah - Explore, Connect, Share</title>
+    <title>Sangrah - Connect & Explore</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <h1>Sangrah</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#explore">Explore</a></li>
-                    <li><a href="#reels">Reels</a></li>
-                    <li><a href="#notifications">Notifications</a></li>
-                    <li><a href="#profile">Profile</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-logo">Sangrah</div>
+        <input type="text" class="search-bar" placeholder="Search">
+        <div class="navbar-icons">
+            <a href="#home"><img src="icons/home-icon.svg" alt="Home"></a>
+            <a href="#explore"><img src="icons/explore-icon.svg" alt="Explore"></a>
+            <a href="#reels"><img src="icons/reel-icon.svg" alt="Reels"></a>
+            <a href="#notifications"><img src="icons/notification-icon.svg" alt="Notifications"></a>
+            <a href="#profile"><img src="icons/profile-icon.svg" alt="Profile"></a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Home Feed Section -->
-    <section id="home">
-        <h2>Home Feed</h2>
-        <div class="post">
-            <img src="user-post.jpg" alt="User Post">
-            <div class="post-info">
-                <h3>@username</h3>
-                <p>Caption for the post...</p>
-                <div class="post-actions">
-                    <button>Like</button>
-                    <button>Comment</button>
-                    <button>Share</button>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Feed Section -->
+        <section class="feed">
+            <article class="post">
+                <header class="post-header">
+                    <img src="user-profile.jpg" alt="User Profile" class="post-user-profile">
+                    <h3>@username</h3>
+                </header>
+                <img src="post-image.jpg" alt="Post Image" class="post-image">
+                <div class="post-interactions">
+                    <button class="like-button">Like</button>
+                    <button class="comment-button">Comment</button>
+                    <button class="share-button">Share</button>
+                </div>
+                <div class="post-caption">
+                    <h4>@username</h4>
+                    <p>Caption for the post...</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sidebar for Suggestions or Stories -->
+        <aside class="sidebar">
+            <div class="suggestions">
+                <h3>Suggestions for You</h3>
+                <!-- Suggested Profiles -->
+                <div class="suggested-profile">
+                    <img src="suggested-user.jpg" alt="Suggested User">
+                    <h4>@suggesteduser</h4>
+                    <button>Follow</button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Explore Section -->
-    <section id="explore">
-        <h2>Explore</h2>
-        <div class="explore-grid">
-            <!-- Thumbnails for Explore section -->
-            <img src="explore1.jpg" alt="Explore 1">
-            <img src="explore2.jpg" alt="Explore 2">
-            <img src="explore3.jpg" alt="Explore 3">
-            <!-- Add more images as needed -->
-        </div>
-    </section>
-
-    <!-- Reels Section -->
-    <section id="reels">
-        <h2>Reels</h2>
-        <video controls src="reel-video.mp4"></video>
-    </section>
-
-    <!-- Notifications Section -->
-    <section id="notifications">
-        <h2>Notifications</h2>
-        <ul class="notifications-list">
-            <li>@user liked your post</li>
-            <li>@user commented on your post</li>
-            <!-- Add more notifications -->
-        </ul>
-    </section>
-
-    <!-- Profile Section -->
-    <section id="profile">
-        <h2>Profile</h2>
-        <div class="profile-info">
-            <img src="profile-pic.jpg" alt="Profile Picture">
-            <h3>@username</h3>
-            <p>Bio goes here...</p>
-            <button>Edit Profile</button>
-        </div>
-    </section>
+        </aside>
+    </main>
 
     <script src="script.js"></script>
 </body>
 </html>
+
