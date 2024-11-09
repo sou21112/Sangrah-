@@ -3,15 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Home Feed</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to Your Home Feed</h1>
+    <h1>Your Feed</h1>
+    <nav>
+      <a href="profile.html">Profile</a>
+      <a href="upload.html">Upload</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </nav>
   </header>
-  <main>
-    <p>This is the home page where your content will appear.</p>
+  
+  <main class="home-feed">
+    <!-- Sidebar Profile Section -->
+    <aside class="sidebar">
+      <div class="profile-summary">
+        <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic">
+        <h2>Username</h2>
+        <p>Short bio goes here...</p>
+        <button>View Profile</button>
+      </div>
+    </aside>
+    
+    <!-- Main Feed Section -->
+    <section class="feed">
+      <!-- Example Post -->
+      <article class="post">
+        <div class="post-header">
+          <img src="https://via.placeholder.com/50" alt="User" class="post-user-pic">
+          <div>
+            <h3>Username</h3>
+            <p>Posted 2 hours ago</p>
+          </div>
+        </div>
+        <img src="https://via.placeholder.com/600x400" alt="Post Image" class="post-image">
+        <div class="post-actions">
+          <button class="like-button">❤️ Like</button>
+          <button class="comment-button">💬 Comment</button>
+        </div>
+        <p><strong>Username:</strong> Caption goes here...</p>
+      </article>
+
+      <!-- Additional Posts -->
+      <article class="post">
+        <div class="post-header">
+          <img src="https://via.placeholder.com/50" alt="User" class="post-user-pic">
+          <div>
+            <h3>Another User</h3>
+            <p>Posted 5 hours ago</p>
+          </div>
+        </div>
+        <video controls class="post-video">
+          <source src="sample-video.mp4" type="video/mp4">
+        </video>
+        <div class="post-actions">
+          <button class="like-button">❤️ Like</button>
+          <button class="comment-button">💬 Comment</button>
+        </div>
+        <p><strong>Another User:</strong> Check out this video!</p>
+      </article>
+    </section>
   </main>
 </body>
 </html>
