@@ -1,117 +1,68 @@
-
-/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Styling */
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #fafafa;
+    background: linear-gradient(to right, #f7f7f7, #eaeaea);
+}
+
+.container {
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
     color: #333;
 }
 
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-.navbar-logo {
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
     font-weight: bold;
-    font-size: 1.5em;
-    color: #262626;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.search-bar {
-    padding: 0.5em;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
+.register-link,
+#forgotPasswordLink {
+    display: block;
+    margin-top: 15px;
+    color: #0095f6;
+    text-decoration: none;
     font-size: 0.9em;
 }
 
-.navbar-icons img {
-    width: 24px;
-    margin-left: 1.5em;
-}
-
-/* Main Content Layout */
-.main-content {
-    display: flex;
-    margin: 1em auto;
-    max-width: 935px;
-}
-
-/* Feed Section */
-.feed {
-    flex: 3;
-    margin-right: 1em;
-}
-
-.post {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    margin-bottom: 1em;
-    border-radius: 3px;
-}
-
-.post-header, .post-caption, .post-interactions {
-    padding: 0.5em 1em;
-}
-
-.post-header {
-    display: flex;
-    align-items: center;
-}
-
-.post-user-profile {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 1em;
-}
-
-.post-image {
-    width: 100%;
-    display: block;
-}
-
-.post-interactions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #333;
-    font-weight: bold;
-    margin-right: 1em;
-}
-
-/* Sidebar */
-.sidebar {
-    flex: 1;
-}
-
-.suggestions {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    padding: 1em;
-    border-radius: 3px;
-}
-
-.suggested-profile {
-    display: flex;
-    align-items: center;
-    margin-top: 1em;
-}
-
-.suggested-profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 1em;
+.register-link:hover,
+#forgotPasswordLink:hover {
+    text-decoration: underline;
 }
