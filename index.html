@@ -1,55 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sangrah - Login</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" action="home.html">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
 
-    <!-- Login Screen -->
-    <div class="container" id="loginScreen">
-        <img src="logo.png" alt="Sangrah Logo" class="logo">
-        <form id="loginForm">
-            <input type="text" placeholder="Username, email address or mobile number" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit" class="btn">Log In</button>
-        </form>
-        <a href="#" id="forgotPasswordLink">Forgotten Password?</a>
-        <a href="#" id="registerLink" class="register-link">Create new account</a>
-    </div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <input type="checkbox" onclick="togglePassword()"> Show Password
 
-    <!-- Forgot Password Screen -->
-    <div class="container" id="forgotPasswordScreen" style="display: none;">
-        <h2>Find your account</h2>
-        <form id="forgotPasswordForm">
-            <input type="text" placeholder="Username, email address or mobile number" required>
-            <button type="submit" class="btn">Continue</button>
-        </form>
-        <a href="#" id="backToLogin">Back to Login</a>
-    </div>
+      <button type="submit">Login</button>
+      <p><a href="forgot_password.html">Forgot Password?</a></p>
+    </form>
+    <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+  </div>
 
-    <!-- Registration Screen -->
-    <div class="container" id="registerScreen" style="display: none;">
-        <h2>Sign up to Sangrah</h2>
-        <form id="registerForm">
-            <input type="text" placeholder="Mobile number or email" required>
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit" class="btn">Sign Up</button>
-        </form>
-        <a href="#" id="backToLoginFromRegister">I already have an account</a>
-    </div>
-
-    <!-- Home Screen -->
-    <div class="container" id="homeScreen" style="display: none;">
-        <h1>Welcome to Sangrah!</h1>
-        <p>This is your home feed.</p>
-    </div>
-
-    <script src="script.js"></script>
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("password");
+      password.type = password.type === "password" ? "text" : "password";
+    }
+  </script>
 </body>
 </html>
-
