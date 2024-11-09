@@ -1,38 +1,37 @@
-// Handle screen navigation
+// Select DOM elements
+const loginScreen = document.getElementById("loginScreen");
+const forgotPasswordScreen = document.getElementById("forgotPasswordScreen");
+const registerScreen = document.getElementById("registerScreen");
+const homeScreen = document.getElementById("homeScreen");
+
+// Event listeners for navigation between screens
 document.getElementById("forgotPasswordLink").addEventListener("click", function() {
-    document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("forgotPasswordScreen").style.display = "block";
+    loginScreen.style.display = "none";
+    forgotPasswordScreen.style.display = "block";
 });
 
 document.getElementById("registerLink").addEventListener("click", function() {
-    document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("registerScreen").style.display = "block";
+    loginScreen.style.display = "none";
+    registerScreen.style.display = "block";
 });
 
 document.getElementById("backToLogin").addEventListener("click", function() {
-    document.getElementById("forgotPasswordScreen").style.display = "none";
-    document.getElementById("loginScreen").style.display = "block";
+    forgotPasswordScreen.style.display = "none";
+    loginScreen.style.display = "block";
 });
 
 document.getElementById("backToLoginFromRegister").addEventListener("click", function() {
-    document.getElementById("registerScreen").style.display = "none";
-    document.getElementById("loginScreen").style.display = "block";
+    registerScreen.style.display = "none";
+    loginScreen.style.display = "block";
 });
 
+// Login form submission
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("homeScreen").style.display = "block";
+    console.log("Logging in...");
+    loginScreen.style.display = "none";
+    homeScreen.style.display = "block";
 });
 
-document.getElementById("forgotPasswordForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Password reset link sent!");
-});
-
-document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Account created successfully!");
-    document.getElementById("registerScreen").style.display = "none";
-    document.getElementById("loginScreen").style.display = "block";
-});
+// Forgot password form submission
+document.getElementById("forgotPasswordForm").add
