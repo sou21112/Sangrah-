@@ -3,39 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Sangrah</title>
+    <title>Sangrah - Explore, Connect, Share</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Login to Sangrah</h2>
-        <form id="loginForm">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            
-            <input type="checkbox" id="showPassword"> Show Password
-            <a href="forgot_password.html" class="forgot-password-link">Forgot Password?</a>
-            
-            <button type="submit">Login</button>
-        </form>
-        <!-- Link to Home -->
-        <p><a href="home.html">Login</a></p>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>Sangrah</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#explore">Explore</a></li>
+                    <li><a href="#reels">Reels</a></li>
+                    <li><a href="#notifications">Notifications</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <div id="loginMessage"></div>
-    </div>
+    <!-- Home Feed Section -->
+    <section id="home">
+        <h2>Home Feed</h2>
+        <div class="post">
+            <img src="user-post.jpg" alt="User Post">
+            <div class="post-info">
+                <h3>@username</h3>
+                <p>Caption for the post...</p>
+                <div class="post-actions">
+                    <button>Like</button>
+                    <button>Comment</button>
+                    <button>Share</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="scripts.js"></script>
+    <!-- Explore Section -->
+    <section id="explore">
+        <h2>Explore</h2>
+        <div class="explore-grid">
+            <!-- Thumbnails for Explore section -->
+            <img src="explore1.jpg" alt="Explore 1">
+            <img src="explore2.jpg" alt="Explore 2">
+            <img src="explore3.jpg" alt="Explore 3">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!-- Reels Section -->
+    <section id="reels">
+        <h2>Reels</h2>
+        <video controls src="reel-video.mp4"></video>
+    </section>
+
+    <!-- Notifications Section -->
+    <section id="notifications">
+        <h2>Notifications</h2>
+        <ul class="notifications-list">
+            <li>@user liked your post</li>
+            <li>@user commented on your post</li>
+            <!-- Add more notifications -->
+        </ul>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile">
+        <h2>Profile</h2>
+        <div class="profile-info">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+            <h3>@username</h3>
+            <p>Bio goes here...</p>
+            <button>Edit Profile</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
-    </div>
-
-    <script src="scripts.js"></script>
-</body>
-</html>
-
-
