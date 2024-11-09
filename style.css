@@ -1,73 +1,117 @@
-/* Basic Reset */
+
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Styles */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: #fafafa;
     color: #333;
-    background-color: #f5f5f5;
 }
 
-header {
-    background-color: #fff;
-    padding: 1em;
-    border-bottom: 1px solid #ddd;
+/* Navbar Styling */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1em;
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
 }
 
-header h1 {
-    color: #e1306c; /* Sangrah brand color */
+.navbar-logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #262626;
 }
 
-header nav ul {
-    list-style: none;
+.search-bar {
+    padding: 0.5em;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.navbar-icons img {
+    width: 24px;
+    margin-left: 1.5em;
+}
+
+/* Main Content Layout */
+.main-content {
     display: flex;
-    gap: 1em;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-section {
-    padding: 2em;
-    max-width: 600px;
     margin: 1em auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 935px;
 }
 
-.post img {
-    width: 100%;
-    border-radius: 8px;
+/* Feed Section */
+.feed {
+    flex: 3;
+    margin-right: 1em;
 }
 
-.explore-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
-}
-
-.explore-grid img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* Profile */
-.profile-info {
-    text-align: center;
-}
-.profile-info img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.post {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
     margin-bottom: 1em;
+    border-radius: 3px;
+}
+
+.post-header, .post-caption, .post-interactions {
+    padding: 0.5em 1em;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+}
+
+.post-user-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+}
+
+.post-interactions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+}
+
+.suggestions {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 1em;
+    border-radius: 3px;
+}
+
+.suggested-profile {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.suggested-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1em;
 }
