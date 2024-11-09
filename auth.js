@@ -4,6 +4,15 @@ const users = {
   "user2": "password2"
 };
 
+// Check if the user is already logged in
+function checkLogin() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (loggedInUser) {
+    window.location.href = "home.html"; // Redirect to home page if already logged in
+  }
+}
+
+// Login function to check username and password
 function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -11,10 +20,14 @@ function login() {
 
   // Check if username and password match
   if (users[username] && users[username] === password) {
-    // Redirect to the home page if login is successful
-    window.location.href = "home.html"; // Change this URL to the actual home page
+    // Store the logged-in user in localStorage
+    localStorage.setItem("loggedInUser", username);
+
+    // Redirect to home page
+    window.location.href = "home.html";
   } else {
     // Show error message if credentials are incorrect
     errorMessage.textContent = "Incorrect username or password.";
   }
 }
+
