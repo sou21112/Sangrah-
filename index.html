@@ -3,32 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sangrah</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sangrah - Capture, Connect, and Share Your World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            margin: 1rem;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .stats {
+            margin-top: 2rem;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login to Sangrah</h1>
-        <form action="home.html">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <label>
-                <input type="checkbox" onclick="togglePassword()"> Show Password
-            </label>
-            <button type="submit">Login</button>
-            <a href="forgot_password.html">Forgot Password?</a>
-            <p>Don't have an account? <a href="register.html">Sign Up</a></p>
-        </form>
+    <header>
+        <h1>Sangrah</h1>
+        <p>Capture, Connect, and Share Your World</p>
+    </header>
+    <div class="container">
+        <button class="btn">Sign Up</button>
+        <button class="btn">Login</button>
+        <div class="stats">
+            <p>Active Users: 123</p>
+            <p>New Posts: 456</p>
+            <p>Trending Hashtags: #Life, #Travel, #Food</p>
+        </div>
     </div>
-    <script>
-        function togglePassword() {
-            var password = document.querySelector('input[type="password"]');
-            if (password.type === "password") {
-                password.type = "text";
-            } else {
-                password.type = "password";
-            }
-        }
-    </script>
 </body>
 </html>
