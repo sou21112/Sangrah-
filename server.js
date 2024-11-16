@@ -1,40 +1,38 @@
-// server.js
-const express = require('express');
-const nodemailer = require('nodemailer');
-const app = express();
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
 
-app.post('/forgot_password', (req, res) => {
-    const email = req.body.email;
+h1 {
+    margin-bottom: 20px;
+}
 
-    // Set up your mail server (e.g., Gmail)
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'your-email@gmail.com',
-            pass: 'your-email-password'
-        }
-    });
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
 
-    let mailOptions = {
-        from: 'your-email@gmail.com',
-        to: email,
-        subject: 'Password Reset Link',
-        text: 'Click the link to reset your password: http://yourwebsite.com/reset_password'
-    };
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border: 1px solid #000;
+    cursor: pointer;
+}
 
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            console.log(error);
-            res.send('Error sending email');
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.send('Password reset link has been sent to your email');
-        }
-    });
-});
-
-app.listen(3000, () => {
-    console.log('Server started on http://localhost:3000');
-});
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
