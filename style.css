@@ -1,0 +1,91 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: all 0.3s;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav button {
+    background: white;
+    color: #6200ea;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  nav button:hover {
+    background-color: #f3e5f5;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Quote of the Day */
+  .quote-of-the-day {
+    background-color: #d1c4e9;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .upload-area {
+    margin: 20px 0;
+  }
+  
+  .upload-area input {
+    margin-right: 10px;
+  }
+  
+  .post {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .post img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  footer {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .dark-mode {
+    background-color: #333;
+    color: white;
+  }
+  
