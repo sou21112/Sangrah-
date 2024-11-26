@@ -3,34 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Google Play Redeem Codes</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Get Free Google Play Redeem Codes</h1>
-        <p>Your gateway to exciting apps, games, and more!</p>
-        <button onclick="location.href='signup.html'">Sign Up Now</button>
-    </header>
-    <main>
-        <section id="how-it-works">
-            <h2>How It Works</h2>
-            <ol>
-                <li>Sign Up and Log In</li>
-                <li>Complete tasks or earn points</li>
-                <li>Redeem your Google Play Code</li>
-            </ol>
-        </section>
-        <section id="codes">
-            <h2>Available Codes</h2>
-            <ul>
-                <li>₹100 Code - 500 Points</li>
-                <li>₹200 Code - 1000 Points</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 FreeCodeHub. All rights reserved.</p>
-    </footer>
+    <h1>Tic Tac Toe</h1>
+    <div class="board" id="board">
+        <div class="cell" id="cell-0" onclick="makeMove(0)"></div>
+        <div class="cell" id="cell-1" onclick="makeMove(1)"></div>
+        <div class="cell" id="cell-2" onclick="makeMove(2)"></div>
+        <div class="cell" id="cell-3" onclick="makeMove(3)"></div>
+        <div class="cell" id="cell-4" onclick="makeMove(4)"></div>
+        <div class="cell" id="cell-5" onclick="makeMove(5)"></div>
+        <div class="cell" id="cell-6" onclick="makeMove(6)"></div>
+        <div class="cell" id="cell-7" onclick="makeMove(7)"></div>
+        <div class="cell" id="cell-8" onclick="makeMove(8)"></div>
+    </div>
+    <button onclick="resetGame()">Reset Game</button>
+    <script src="scripts.js"></script>
 </body>
 </html>
